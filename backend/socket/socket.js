@@ -7,9 +7,16 @@ const app = express();
 app.use(cors({ origin: 'https://chat-app-mern-1-gcf1.onrender.com' }));
 const server = http.createServer(app);
 
+// const io = new Server(server, {
+//   cors: {
+//     origin: ["http://localhost:3000"],
+//     methods: ["GET", "POST"],
+//   },
+// });
+
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000"],
+    origin: ["https://chat-app-mern-1-gcf1.onrender.com"],
     methods: ["GET", "POST"],
   },
 });
