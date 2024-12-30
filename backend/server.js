@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 const authRoutes = require("./routes/auth.route.js"); // Use `require` for the routes
 const messageRoutes = require("./routes/message.route.js");
@@ -17,6 +18,7 @@ dotenv.config();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
