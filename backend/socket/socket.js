@@ -3,6 +3,7 @@ const http = require("http");
 const express = require("express");
 const cors = require("cors");
 const app = express();
+// app.use(cors())
 app.use(cors({ origin: 'https://chat-app-mern-1-gcf1.onrender.com' }));
 const server = http.createServer(app);
 
