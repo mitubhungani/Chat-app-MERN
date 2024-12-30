@@ -3,28 +3,13 @@ const http = require("http");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-// app.use(cors())
-// app.use(cors({ origin: 'https://chat-app-mern-1-gcf1.onrender.com' }));
-app.use(cors({
-  origin: 'https://your-vercel-app-url.vercel.app', // Replace with your Vercel app URL
-  methods: ['GET', 'POST'],
-  credentials: true // If needed
-}));
-
+app.use(cors())
 const server = http.createServer(app);
-
-// const io = new Server(server, {
-//   cors: {
-//     origin: ["http://localhost:3000"],
-//     methods: ["GET", "POST"],
-//   },
-// });
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://chat-app-mern-1-gcf1.onrender.com"],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST"],
-    credentials: true // Allow cookies if needed
   },
 });
 
